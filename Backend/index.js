@@ -25,11 +25,7 @@ app.get('*', (req,res) => {
 app.use('/api/v1/auth', routes)
 
 // db coonection
-mongoose.connect(process.env.MONGO_URL,{
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true
-})
+mongoose.connect(process.env.MONGO_URL)
 .then(() => {
   console.log('Database Connection Successfully')
 }).catch((e) => {
